@@ -63,8 +63,11 @@ new \core\config();
 use \core\router as Router,
     \helpers\url as Url;
 
-//define routes
-Router::any('', '\controllers\welcome@index');
+//Primary route
+Router::any('projectController', '\controllers\projectController@index');
+
+//Registration route
+Router::any('register', '\controllers\projectController@register');
 
 //if no route found
 Router::error('\core\error@index');
